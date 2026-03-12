@@ -1,0 +1,247 @@
+:root {
+  --accent: #ff7f50;
+  --text-dark: #333;
+  --text-light: #666;
+  --white: #ffffff;
+}
+
+/* =========================
+Background Image + Animation
+========================= */
+
+.login-container {
+
+  height:100vh;
+  width:100%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background-image:url("./loginbg.png");
+  background-size:cover;
+  background-position:center;
+
+  font-family:Calibri,sans-serif;
+
+  position:relative;
+  overflow:hidden;
+
+}
+
+
+/* Floating Shapes */
+
+.login-container::before,
+.login-container::after{
+
+content:"";
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(255,255,255,0.3);
+
+animation:float 8s infinite ease-in-out;
+
+}
+
+.login-container::before{
+
+width:200px;
+height:200px;
+
+top:10%;
+left:10%;
+
+}
+
+.login-container::after{
+
+width:250px;
+height:250px;
+
+bottom:10%;
+right:10%;
+
+}
+
+
+@keyframes float{
+
+0%{transform:translateY(0px)}
+
+50%{transform:translateY(-25px)}
+
+100%{transform:translateY(0px)}
+
+}
+
+
+/* =========================
+Login Box Animation
+========================= */
+
+.login-box{
+
+background:rgba(255,255,255,0.9);
+
+padding:32px;
+
+border-radius:15px;
+
+width:330px ;
+
+text-align:center;
+
+box-shadow:0px 10px 25px rgba(0,0,0,0.2);
+
+animation:fadeIn 0.8s ease;
+
+z-index:10;
+
+}
+
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0px);
+}
+
+}
+
+
+/* =========================
+Title
+========================= */
+
+.login-box h2{
+margin-bottom:20px;
+
+color:var(--text-dark);
+
+font-weight:normal;
+
+font-size:32px;
+
+}
+
+
+/* =========================
+Inputs
+========================= */
+
+.login-box input{
+
+width:90%;
+
+padding:12px;
+
+margin:10px 0;
+
+border-radius:8px;
+
+border:1px solid #ccc;
+
+font-size:15px;
+
+transition:0.3s;
+
+}
+
+
+/* Focus Animation */
+
+.login-box input:focus{
+
+border-color:var(--accent);
+
+outline:none;
+
+transform:scale(1.03);
+
+}
+
+
+/* =========================
+Button
+========================= */
+
+.login-box button{
+
+margin-top:10px;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:8px;
+
+background:var(--accent);
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+
+/* Hover Animation */
+
+.login-box button:hover{
+
+transform:translateY(-2px);
+
+background:#ff6333;
+
+}
+
+
+/* =========================
+Hint Text
+========================= */
+
+.hint{
+
+margin-top:15px;
+
+font-size:13px;
+
+color:var(--text-light);
+
+}
+
+
+/* =========================
+Responsive
+========================= */
+
+@media(max-width:600px){
+
+.login-box{
+
+width:85%;
+
+padding:25px;
+
+}
+
+.login-box h2{
+
+font-size:22px;
+
+}
+
+}

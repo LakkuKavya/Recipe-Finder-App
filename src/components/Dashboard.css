@@ -1,0 +1,219 @@
+/* ===== DASHBOARD BACKGROUND ===== */
+.dashboard {
+  min-height: 100vh;
+  padding: 25px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+
+  background: linear-gradient(135deg,#1f2a44,#3a4a7a);
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(190, 185, 185, 0.3);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-weight: 600;
+  font-size: 36px;
+}
+
+/* Logout Button */
+.logout {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #ff4b2b;
+  color: white;
+}
+
+.logout:hover {
+  opacity: 0.9;
+}
+
+/* ===== SEARCH BOX ===== */
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  height:26px;
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  height:47px;
+  padding:0 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  background: #4facfe;
+  color: white;
+}
+
+.search-box button:hover {
+  opacity: 0.9;
+}
+
+/* ===== SUGGESTIONS ===== */
+.suggestions {
+  margin-bottom: 20px;
+}
+
+.suggestions span {
+  display: inline-block;
+  margin: 5px;
+  padding: 6px 12px;
+  border-radius: 15px;
+  cursor: pointer;
+
+  background: rgba(16, 16, 16, 0.15);
+}
+
+.suggestions span:hover {
+  background: #4facfe;
+}
+
+/* ===== LOADER ===== */
+.loader {
+  margin: 30px auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  border: 4px solid rgba(255,255,255,0.3);
+  border-top: 4px solid white;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== RECIPE GRID ===== */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap: 20px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Image */
+.card img {
+  width: 99%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Card Title */
+.card h4 {
+  padding: 10px;
+  font-size: 15px;
+}
+
+/* ===== POPUP ===== */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Popup Box */
+.popup {
+  width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+
+  padding: 20px;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.15);
+}
+
+/* Popup Image */
+.popup img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  right: 15px;
+  
+  top: 10px;
+
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+/* ===== FAVORITE HEART ICON ===== */
+
+.heart{
+  font-size:30px;
+  text-align:left;
+  cursor:pointer;
+  color:gray;
+  margin-top:10px;
+  margin-left: 26px;
+  transition:all 0.3s ease;
+  }
+  
+  /* when recipe is favorite */
+  .heart.active{
+  color:red;
+  transform:scale(1.2);
+  }
+  /* ===== FAVORITES BUTTON NEAR SEARCH ===== */
+
+.fav-toggle{
+  background:none;
+  border:none;
+  font-size:24px;
+  color:red;
+  cursor:pointer;
+  margin-left:10px;
+  transition:0.3s;
+  }
+  
+  .fav-toggle:hover{
+  transform:scale(1.1);
+  }
